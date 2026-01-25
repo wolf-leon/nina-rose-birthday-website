@@ -1,69 +1,62 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Nina Rose's 3rd Birthday! 🎂",
+  description:
+    "Celebrating Nina Rose turning 3! Join us for a magical birthday celebration! 🎉🎈",
   navItems: [
     {
       label: "Home",
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
+      label: "About Nina",
       href: "/about",
+    },
+    {
+      label: "Uncle Lee's Message",
+      href: "/uncle-leon",
+    },
+    {
+      label: "Gallery",
+      href: "/gallery",
+    },
+    {
+      label: "Fun & Games",
+      href: "/games",
+    },
+    {
+      label: "Birthday Wishes",
+      href: "/wishes",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Home",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "About Nina",
+      href: "/about",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Uncle Lee's Message",
+      href: "/uncle-leon",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "Gallery",
+      href: "/gallery",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "Fun & Games",
+      href: "/games",
     },
     {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Birthday Wishes",
+      href: "/wishes",
     },
   ],
   links: {
-    github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    email: "mailto:birthday@ninarose.com",
   },
 };
