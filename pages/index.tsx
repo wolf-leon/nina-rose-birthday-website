@@ -8,7 +8,6 @@ import {
   CakeIcon,
   GiftIcon,
   SparklesIcon,
-  PartyIcon,
 } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
 
@@ -143,95 +142,120 @@ export default function IndexPage() {
 
         <motion.div
           animate={{ opacity: 1, scale: 1 }}
-          className="flex flex-wrap gap-4 justify-center mt-12"
-          initial={{ opacity: 0, scale: 0.8 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
+          className="w-full max-w-5xl mt-16"
+          initial={{ opacity: 0, scale: 0.95 }}
+          transition={{ delay: 1.8, duration: 0.8 }}
         >
-          <Button
-            as={Link}
-            className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
-            href="/about"
-            size="lg"
-            startContent={<SparklesIcon size={24} />}
-          >
-            About Nina
-          </Button>
-          <Button
-            as={Link}
-            className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
-            href="/gallery"
-            size="lg"
-            startContent={<CakeIcon size={24} />}
-          >
-            Photo Gallery
-          </Button>
-          <Button
-            as={Link}
-            className="bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
-            href="/games"
-            size="lg"
-            startContent={<PartyIcon size={24} />}
-          >
-            Fun & Games
-          </Button>
-        </motion.div>
-
-        <motion.div
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mt-16 mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          transition={{ delay: 1.4, duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-            What to look forward to 🎉
-          </h2>
-        </motion.div>
-
-        <motion.div
-          animate={{ opacity: 1, y: 0 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl"
-          initial={{ opacity: 0, y: 20 }}
-          transition={{ delay: 1.6, duration: 0.8 }}
-        >
-          <div className="bg-gradient-to-br from-pink-100 to-pink-200 dark:from-pink-900/30 dark:to-pink-800/30 border-2 border-pink-300 dark:border-pink-700 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
-            <div className="text-center p-8">
-              <div className="flex justify-center mb-4">
-                <CakeIcon className="text-pink-600" size={56} />
-              </div>
-              <h3 className="text-2xl font-bold text-pink-700 dark:text-pink-300 mb-2">
-                Birthday Party
-              </h3>
-              <p className="text-pink-600 dark:text-pink-400 text-lg">
-                Celebrating with cake, games, and lots of fun! 🎂
+          <div className="bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 dark:from-orange-900/20 dark:via-pink-900/20 dark:to-purple-900/20 rounded-3xl shadow-2xl p-8 md:p-12 border-4 border-orange-300 dark:border-orange-700">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+                ⭐ Don&apos;t Miss These! ⭐
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-semibold">
+                Explore the best parts of Nina&apos;s birthday website!
               </p>
             </div>
-          </div>
 
-          <div className="bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 border-2 border-purple-300 dark:border-purple-700 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
-            <div className="text-center p-8">
-              <div className="flex justify-center mb-4">
-                <GiftIcon className="text-purple-600" size={56} />
-              </div>
-              <h3 className="text-2xl font-bold text-purple-700 dark:text-purple-300 mb-2">
-                Special Gifts
-              </h3>
-              <p className="text-purple-600 dark:text-purple-400 text-lg">
-                Unwrapping surprises and making wishes! 🎁
-              </p>
-            </div>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link href="/about">
+                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all cursor-pointer border-2 border-green-200 dark:border-green-700 h-full">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="text-4xl">⭐</div>
+                      <h3 className="text-2xl font-bold text-green-600 dark:text-green-400">
+                        About Nina
+                      </h3>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 text-lg">
+                      Learn all about Nina Rose, her favorite things, family,
+                      and special milestones!
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
 
-          <div className="bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 border-2 border-blue-300 dark:border-blue-700 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
-            <div className="text-center p-8">
-              <div className="flex justify-center mb-4">
-                <SparklesIcon className="text-blue-600" size={56} />
-              </div>
-              <h3 className="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-2">
-                Magical Moments
-              </h3>
-              <p className="text-blue-600 dark:text-blue-400 text-lg">
-                Creating memories that will last forever! ✨
-              </p>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link href="/uncle-leon">
+                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all cursor-pointer border-2 border-orange-200 dark:border-orange-700 h-full">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="text-4xl">💌</div>
+                      <h3 className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+                        Leon&apos;s Special Message
+                      </h3>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 text-lg">
+                      A heartfelt birthday message from Uncle Leon filled with
+                      love and promises!
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link href="/games#funny-moments">
+                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all cursor-pointer border-2 border-pink-200 dark:border-pink-700 h-full">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="text-4xl">🍕</div>
+                      <h3 className="text-2xl font-bold text-pink-600 dark:text-pink-400">
+                        Tales of Nina
+                      </h3>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 text-lg">
+                      Hilarious stories about Nina&apos;s adventures with
+                      tahini, pizza heists, and more!
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link href="/games">
+                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all cursor-pointer border-2 border-purple-200 dark:border-purple-700 h-full">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="text-4xl">🎮</div>
+                      <h3 className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                        Interactive Games
+                      </h3>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 text-lg">
+                      Play memory match, solve puzzles, and have fun with
+                      Nina&apos;s birthday games!
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link href="/gallery">
+                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all cursor-pointer border-2 border-blue-200 dark:border-blue-700 h-full">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="text-4xl">📸</div>
+                      <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                        Photo Gallery
+                      </h3>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 text-lg">
+                      Browse through precious moments and beautiful memories of
+                      Nina Rose!
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </motion.div>
@@ -240,7 +264,7 @@ export default function IndexPage() {
           animate={{ opacity: 1 }}
           className="mt-12 text-center"
           initial={{ opacity: 0 }}
-          transition={{ delay: 1.6, duration: 1 }}
+          transition={{ delay: 2.0, duration: 1 }}
         >
           <p className="text-3xl md:text-4xl font-bold mb-4">
             🌟 Let&apos;s Make This Day Special! 🌟
