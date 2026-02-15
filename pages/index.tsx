@@ -69,7 +69,7 @@ export default function IndexPage() {
           >
             <div className="inline-block">
               <div className="text-7xl md:text-9xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent animate-pulse">
-                3
+                2
               </div>
               <p className="text-2xl md:text-3xl font-bold text-pink-500 mt-2">
                 Years Old Today! 🎂
@@ -78,7 +78,7 @@ export default function IndexPage() {
           </motion.div>
 
           <div className={subtitle({ class: "mt-6 text-xl" })}>
-            Join us in celebrating this special day! 🎈✨
+            Celebrating this special day! 🎈✨
           </div>
         </motion.div>
 
@@ -95,7 +95,7 @@ export default function IndexPage() {
                 <img
                   alt="Nina Rose"
                   className="w-full h-full object-cover"
-                  src="/nina-photo.jpg"
+                  src="/picture-72.jpeg"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                     e.currentTarget.nextElementSibling?.classList.remove(
@@ -135,15 +135,17 @@ export default function IndexPage() {
             initial={{ opacity: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
           >
+            <br />
+            <br />
             Our Birthday Star! ⭐
           </motion.p>
         </motion.div>
 
         <motion.div
           animate={{ opacity: 1, scale: 1 }}
-          className="flex flex-wrap gap-4 justify-center mt-4"
+          className="flex flex-wrap gap-4 justify-center mt-12"
           initial={{ opacity: 0, scale: 0.8 }}
-          transition={{ delay: 1, duration: 0.5 }}
+          transition={{ delay: 1.2, duration: 0.5 }}
         >
           <Button
             as={Link}
@@ -176,9 +178,20 @@ export default function IndexPage() {
 
         <motion.div
           animate={{ opacity: 1, y: 0 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mt-12"
+          className="text-center mt-16 mb-8"
           initial={{ opacity: 0, y: 20 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
+          transition={{ delay: 1.4, duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+            What to look forward to 🎉
+          </h2>
+        </motion.div>
+
+        <motion.div
+          animate={{ opacity: 1, y: 0 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl"
+          initial={{ opacity: 0, y: 20 }}
+          transition={{ delay: 1.6, duration: 0.8 }}
         >
           <div className="bg-gradient-to-br from-pink-100 to-pink-200 dark:from-pink-900/30 dark:to-pink-800/30 border-2 border-pink-300 dark:border-pink-700 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
             <div className="text-center p-8">

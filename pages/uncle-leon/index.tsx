@@ -50,12 +50,12 @@ export default function UncleLeonPage() {
 
             <div className="space-y-6 text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
               <p className="text-center font-semibold text-2xl text-pink-600 dark:text-pink-400">
-                Happy 3rd Birthday, my precious niece! 🎂✨
+                Happy 2nd Birthday, my precious niece! 🎂✨
               </p>
 
               <p>
-                Watching you grow over these past three years has been one of
-                the greatest joys of my life. From the moment you came into this
+                Watching you grow over these past two years has been one of the
+                greatest joys of my life. From the moment you came into this
                 world, you&apos;ve filled our hearts with so much love,
                 laughter, and happiness.
               </p>
@@ -85,7 +85,7 @@ export default function UncleLeonPage() {
               </div>
 
               <p>
-                As you turn three today, I want you to know that you are loved
+                As you turn two today, I want you to know that you are loved
                 beyond measure. You have a whole family who adores you, and
                 I&apos;m so proud to be your Uncle Lee. I can&apos;t wait to see
                 all the amazing things you&apos;ll do as you grow up!

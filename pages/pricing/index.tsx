@@ -12,7 +12,7 @@ export default function WishesPage() {
     {
       name: "Grandma & Grandpa",
       message:
-        "Happy 3rd Birthday, Nina Rose! You bring so much joy to our lives! 💖",
+        "Happy 2nd Birthday, Nina Rose! You bring so much joy to our lives! 💖",
       emoji: "👵👴",
     },
     {
@@ -24,7 +24,7 @@ export default function WishesPage() {
     {
       name: "Uncle Mike",
       message:
-        "Happy Birthday to the sweetest 3-year-old! Have an amazing day! 🎂",
+        "Happy Birthday to the sweetest 2-year-old! Have an amazing day! 🎂",
       emoji: "🎁",
     },
   ]);
@@ -76,7 +76,7 @@ export default function WishesPage() {
                 Share Your Birthday Wishes
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                Write a special message for Nina Rose&apos;s 3rd birthday!
+                Write a special message for Nina Rose&apos;s 2nd birthday!
               </p>
             </div>
 

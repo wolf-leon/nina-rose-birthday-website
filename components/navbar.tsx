@@ -30,7 +30,7 @@ export const Navbar = () => {
               <p className="font-bold text-lg bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
                 Nina Rose
               </p>
-              <p className="text-xs text-default-500">Turning 3! 🎉</p>
+              <p className="text-xs text-default-500">Turning 2! 🎉</p>
             </div>
           </NextLink>
         </NavbarBrand>
