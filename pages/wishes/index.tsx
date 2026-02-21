@@ -2,45 +2,30 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@heroui/button";
 import { Input, Textarea } from "@heroui/input";
+import Link from "next/link";
 
 import { title, subtitle } from "@/components/primitives";
-import { HeartFilledIcon, SparklesIcon, GiftIcon } from "@/components/icons";
+import {
+  HeartFilledIcon,
+  SparklesIcon,
+  GiftIcon,
+  CakeIcon,
+} from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
 
 export default function WishesPage() {
-  const [wishes, setWishes] = useState([
-    {
-      name: "Grandma & Grandpa",
-      message:
-        "Happy 2nd Birthday, Nina Rose! You bring so much joy to our lives! 💖",
-      emoji: "👵👴",
-    },
-    {
-      name: "Aunt Sarah",
-      message:
-        "Wishing you the most magical birthday ever! Can't wait to celebrate with you! 🎉",
-      emoji: "🎈",
-    },
-    {
-      name: "Uncle Mike",
-      message:
-        "Happy Birthday to the sweetest 2-year-old! Have an amazing day! 🎂",
-      emoji: "🎁",
-    },
-  ]);
-
   const [newName, setNewName] = useState("");
   const [newMessage, setNewMessage] = useState("");
 
-  const addWish = () => {
+  const sendWhatsAppMessage = () => {
     if (newName.trim() && newMessage.trim()) {
-      const emojis = ["🎈", "🎉", "🎂", "🎁", "💖", "✨", "🌟", "🎊"];
-      const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+      const whatsappMessage = `Hi Nina Rose,\n\n${newMessage.trim()}\n\n-${newName.trim()}`;
+      const phoneNumber = "918552821291"; // WhatsApp number in international format
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-      setWishes([
-        ...wishes,
-        { name: newName, message: newMessage, emoji: randomEmoji },
-      ]);
+      window.open(whatsappUrl, "_blank");
+
       setNewName("");
       setNewMessage("");
     }
@@ -99,9 +84,15 @@ export default function WishesPage() {
                   inputWrapper:
                     "bg-white dark:bg-gray-800 border-2 border-pink-300 dark:border-pink-700",
                 }}
+                description={
+                  <span className="text-orange-600 dark:text-orange-400 font-bold text-base">
+                    Note: Don&apos;t write &apos;Hi Nina Rose&apos; - it will be
+                    added automatically!
+                  </span>
+                }
                 label="Your Birthday Wish"
                 minRows={4}
-                placeholder="Write your birthday message here..."
+                placeholder="e.g., Wishing you a wonderful birthday filled with joy and laughter!"
                 size="lg"
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
@@ -114,46 +105,11 @@ export default function WishesPage() {
                 isDisabled={!newName.trim() || !newMessage.trim()}
                 size="lg"
                 startContent={<HeartFilledIcon size={24} />}
-                onPress={addWish}
+                onPress={sendWhatsAppMessage}
               >
-                Send Birthday Wish 💌
+                Send via WhatsApp 💌
               </Button>
             </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          animate={{ opacity: 1, y: 0 }}
-          className="w-full max-w-4xl"
-          initial={{ opacity: 0, y: 20 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-            Birthday Messages 💖
-          </h2>
-
-          <div className="space-y-6">
-            {wishes.map((wish, index) => (
-              <motion.div
-                key={index}
-                animate={{ opacity: 1, x: 0 }}
-                className="bg-gradient-to-r from-white to-pink-50 dark:from-gray-800 dark:to-pink-900/20 rounded-2xl p-6 shadow-lg border-2 border-pink-200 dark:border-pink-800"
-                initial={{ opacity: 0, x: -20 }}
-                transition={{ delay: 0.1 * index, duration: 0.5 }}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl flex-shrink-0">{wish.emoji}</div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-pink-600 dark:text-pink-400 mb-2">
-                      {wish.name}
-                    </h3>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {wish.message}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </motion.div>
 
@@ -161,7 +117,7 @@ export default function WishesPage() {
           animate={{ opacity: 1 }}
           className="w-full max-w-4xl mt-8"
           initial={{ opacity: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
         >
           <div className="bg-gradient-to-r from-yellow-100 via-pink-100 to-purple-100 dark:from-yellow-900/20 dark:via-pink-900/20 dark:to-purple-900/20 rounded-2xl p-8 border-2 border-yellow-300 dark:border-yellow-700 shadow-lg text-center">
             <SparklesIcon className="text-purple-500 mx-auto mb-4" size={48} />
@@ -172,6 +128,80 @@ export default function WishesPage() {
               Every message makes Nina Rose&apos;s birthday even more special!
               💝
             </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          animate={{ opacity: 1, y: 0 }}
+          className="w-full max-w-4xl mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          transition={{ delay: 1.0, duration: 0.6 }}
+        >
+          <div className="bg-gradient-to-br from-blue-50 via-pink-50 to-purple-50 dark:from-blue-900/20 dark:via-pink-900/20 dark:to-purple-900/20 rounded-2xl p-8 border-2 border-blue-300 dark:border-blue-700 shadow-lg">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+              Explore More! 🎉
+            </h3>
+            <p className="text-center text-lg text-gray-700 dark:text-gray-300 mb-8">
+              Check out other fun sections of Nina&apos;s birthday website!
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Button
+                as={Link}
+                className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold text-lg px-6 py-6 h-auto shadow-lg hover:shadow-xl transition-all"
+                href="/about"
+                size="lg"
+                startContent={<SparklesIcon size={24} />}
+              >
+                <div className="text-left">
+                  <div className="font-bold">About Nina</div>
+                  <div className="text-sm opacity-90">
+                    Learn more about Nina Rose
+                  </div>
+                </div>
+              </Button>
+              <Button
+                as={Link}
+                className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-lg px-6 py-6 h-auto shadow-lg hover:shadow-xl transition-all"
+                href="/gallery"
+                size="lg"
+                startContent={<CakeIcon size={24} />}
+              >
+                <div className="text-left">
+                  <div className="font-bold">Photo Gallery</div>
+                  <div className="text-sm opacity-90">
+                    See Nina&apos;s precious moments
+                  </div>
+                </div>
+              </Button>
+              <Button
+                as={Link}
+                className="bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold text-lg px-6 py-6 h-auto shadow-lg hover:shadow-xl transition-all"
+                href="/games"
+                size="lg"
+                startContent={<HeartFilledIcon size={24} />}
+              >
+                <div className="text-left">
+                  <div className="font-bold">Fun & Games</div>
+                  <div className="text-sm opacity-90">
+                    Play games and read stories
+                  </div>
+                </div>
+              </Button>
+              <Button
+                as={Link}
+                className="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold text-lg px-6 py-6 h-auto shadow-lg hover:shadow-xl transition-all"
+                href="/uncle-leon"
+                size="lg"
+                startContent={<GiftIcon size={24} />}
+              >
+                <div className="text-left">
+                  <div className="font-bold">Uncle Lee&apos;s Message</div>
+                  <div className="text-sm opacity-90">
+                    A special note from Uncle Lee
+                  </div>
+                </div>
+              </Button>
+            </div>
           </div>
         </motion.div>
       </section>
