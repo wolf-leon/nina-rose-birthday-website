@@ -142,11 +142,11 @@ export default function IndexPage() {
 
         <motion.div
           animate={{ opacity: 1, scale: 1 }}
-          className="w-full max-w-5xl mt-16"
+          className="w-full max-w-5xl mt-16 px-4"
           initial={{ opacity: 0, scale: 0.95 }}
           transition={{ delay: 1.8, duration: 0.8 }}
         >
-          <div className="bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 dark:from-orange-900/20 dark:via-pink-900/20 dark:to-purple-900/20 rounded-3xl shadow-2xl p-8 md:p-12 border-4 border-orange-300 dark:border-orange-700">
+          <div className="bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 dark:from-orange-900/20 dark:via-pink-900/20 dark:to-purple-900/20 rounded-3xl shadow-2xl p-4 md:p-8 lg:p-12 border-4 border-orange-300 dark:border-orange-700">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
                 ⭐ Don&apos;t Miss These! ⭐
@@ -262,19 +262,24 @@ export default function IndexPage() {
 
         <motion.div
           animate={{ opacity: 1 }}
-          className="mt-12 text-center"
+          className="mt-12 text-center px-4"
           initial={{ opacity: 0 }}
           transition={{ delay: 2.0, duration: 1 }}
         >
-          <p className="text-3xl md:text-4xl font-bold mb-4">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
             🌟 Let&apos;s Make This Day Special! 🌟
           </p>
           <Button
             as={Link}
-            className="bg-gradient-to-r from-red-400 via-pink-500 to-purple-500 text-white font-bold text-xl px-12 py-8 shadow-2xl hover:shadow-3xl transition-all animate-pulse"
+            className="bg-gradient-to-r from-red-400 via-pink-500 to-purple-500 text-white font-bold text-base md:text-lg lg:text-xl px-6 md:px-10 lg:px-12 py-4 md:py-6 lg:py-8 shadow-2xl hover:shadow-3xl transition-all animate-pulse w-full md:w-auto"
             href="/wishes"
             size="lg"
-            startContent={<GiftIcon size={28} />}
+            startContent={
+              <GiftIcon
+                className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7"
+                size={20}
+              />
+            }
           >
             Leave a Birthday Wish 💝
           </Button>

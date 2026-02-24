@@ -50,11 +50,11 @@ export default function WishesPage() {
 
         <motion.div
           animate={{ opacity: 1, scale: 1 }}
-          className="w-full max-w-4xl"
+          className="w-full max-w-4xl px-4"
           initial={{ opacity: 0, scale: 0.9 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <div className="bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 dark:from-pink-900/20 dark:via-purple-900/20 dark:to-blue-900/20 rounded-3xl shadow-2xl p-8 md:p-12 border-4 border-pink-300 dark:border-pink-700">
+          <div className="bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 dark:from-pink-900/20 dark:via-purple-900/20 dark:to-blue-900/20 rounded-3xl shadow-2xl p-4 md:p-8 lg:p-12 border-4 border-pink-300 dark:border-pink-700">
             <div className="text-center mb-8">
               <GiftIcon className="text-pink-500 mx-auto mb-4" size={64} />
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -101,10 +101,12 @@ export default function WishesPage() {
 
             <div className="text-center">
               <Button
-                className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold text-lg px-12 py-6 shadow-lg"
+                className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold text-base md:text-lg px-6 md:px-12 py-3 md:py-6 shadow-lg w-full md:w-auto"
                 isDisabled={!newName.trim() || !newMessage.trim()}
                 size="lg"
-                startContent={<HeartFilledIcon size={24} />}
+                startContent={
+                  <HeartFilledIcon className="md:w-6 md:h-6" size={20} />
+                }
                 onPress={sendWhatsAppMessage}
               >
                 Send via WhatsApp 💌
@@ -115,11 +117,11 @@ export default function WishesPage() {
 
         <motion.div
           animate={{ opacity: 1 }}
-          className="w-full max-w-4xl mt-8"
+          className="w-full max-w-4xl mt-8 px-4"
           initial={{ opacity: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
-          <div className="bg-gradient-to-r from-yellow-100 via-pink-100 to-purple-100 dark:from-yellow-900/20 dark:via-pink-900/20 dark:to-purple-900/20 rounded-2xl p-8 border-2 border-yellow-300 dark:border-yellow-700 shadow-lg text-center">
+          <div className="bg-gradient-to-r from-yellow-100 via-pink-100 to-purple-100 dark:from-yellow-900/20 dark:via-pink-900/20 dark:to-purple-900/20 rounded-2xl p-4 md:p-8 border-2 border-yellow-300 dark:border-yellow-700 shadow-lg text-center">
             <SparklesIcon className="text-purple-500 mx-auto mb-4" size={48} />
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 dark:text-gray-200">
               Thank You for Your Wishes! 🌟
@@ -133,11 +135,11 @@ export default function WishesPage() {
 
         <motion.div
           animate={{ opacity: 1, y: 0 }}
-          className="w-full max-w-4xl mt-12"
+          className="w-full max-w-4xl mt-12 px-4"
           initial={{ opacity: 0, y: 20 }}
           transition={{ delay: 1.0, duration: 0.6 }}
         >
-          <div className="bg-gradient-to-br from-blue-50 via-pink-50 to-purple-50 dark:from-blue-900/20 dark:via-pink-900/20 dark:to-purple-900/20 rounded-2xl p-8 border-2 border-blue-300 dark:border-blue-700 shadow-lg">
+          <div className="bg-gradient-to-br from-blue-50 via-pink-50 to-purple-50 dark:from-blue-900/20 dark:via-pink-900/20 dark:to-purple-900/20 rounded-2xl p-4 md:p-8 border-2 border-blue-300 dark:border-blue-700 shadow-lg">
             <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
               Explore More! 🎉
             </h3>
@@ -147,10 +149,12 @@ export default function WishesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Button
                 as={Link}
-                className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold text-lg px-6 py-6 h-auto shadow-lg hover:shadow-xl transition-all"
+                className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold text-base md:text-lg px-4 md:px-6 py-4 md:py-6 h-auto shadow-lg hover:shadow-xl transition-all"
                 href="/about"
                 size="lg"
-                startContent={<SparklesIcon size={24} />}
+                startContent={
+                  <SparklesIcon className="md:w-6 md:h-6" size={20} />
+                }
               >
                 <div className="text-left">
                   <div className="font-bold">About Nina</div>
@@ -161,10 +165,10 @@ export default function WishesPage() {
               </Button>
               <Button
                 as={Link}
-                className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-lg px-6 py-6 h-auto shadow-lg hover:shadow-xl transition-all"
+                className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base md:text-lg px-4 md:px-6 py-4 md:py-6 h-auto shadow-lg hover:shadow-xl transition-all"
                 href="/gallery"
                 size="lg"
-                startContent={<CakeIcon size={24} />}
+                startContent={<CakeIcon className="md:w-6 md:h-6" size={20} />}
               >
                 <div className="text-left">
                   <div className="font-bold">Photo Gallery</div>
@@ -175,10 +179,12 @@ export default function WishesPage() {
               </Button>
               <Button
                 as={Link}
-                className="bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold text-lg px-6 py-6 h-auto shadow-lg hover:shadow-xl transition-all"
+                className="bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold text-base md:text-lg px-4 md:px-6 py-4 md:py-6 h-auto shadow-lg hover:shadow-xl transition-all"
                 href="/games"
                 size="lg"
-                startContent={<HeartFilledIcon size={24} />}
+                startContent={
+                  <HeartFilledIcon className="md:w-6 md:h-6" size={20} />
+                }
               >
                 <div className="text-left">
                   <div className="font-bold">Fun & Games</div>
@@ -189,10 +195,10 @@ export default function WishesPage() {
               </Button>
               <Button
                 as={Link}
-                className="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold text-lg px-6 py-6 h-auto shadow-lg hover:shadow-xl transition-all"
+                className="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold text-base md:text-lg px-4 md:px-6 py-4 md:py-6 h-auto shadow-lg hover:shadow-xl transition-all"
                 href="/uncle-leon"
                 size="lg"
-                startContent={<GiftIcon size={24} />}
+                startContent={<GiftIcon className="md:w-6 md:h-6" size={20} />}
               >
                 <div className="text-left">
                   <div className="font-bold">Uncle Lee&apos;s Message</div>
